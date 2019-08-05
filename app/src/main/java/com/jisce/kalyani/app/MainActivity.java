@@ -1,11 +1,17 @@
 package com.jisce.kalyani.app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.jisce.kalyani.app.Model.Notices;
 
 import java.util.ArrayList;
@@ -27,7 +33,30 @@ public class MainActivity extends AppCompatActivity {
 
         noticesList = new ArrayList<>();
 
-        noticeBoardAdapter= new AllNoticeBoardAdapter(this,noticesList);
-        recyclerView.setAdapter(noticeBoardAdapter);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Notices");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    for (DataSnapshot noticesdataSnapshot: dataSnapshot.getChildren()){
+                        Notices not = noticesdataSnapshot.getValue(Notices.class);
+                        noticesList.add(not);
+
+
+                    }
+                    noticeBoardAdapter= new AllNoticeBoardAdapter(MainActivity.this,noticesList);
+                    recyclerView.setAdapter(noticeBoardAdapter);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
     }
 }

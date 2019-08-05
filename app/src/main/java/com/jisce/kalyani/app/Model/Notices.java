@@ -3,6 +3,10 @@ package com.jisce.kalyani.app.Model;
 public class Notices {
     String Subject, Dept, Details, Link;
 
+    public Notices(){
+
+    }
+
     public Notices(String subject, String dept, String details, String link) {
         Subject = subject;
         Dept = dept;
