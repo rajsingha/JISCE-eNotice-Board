@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardElevation="8dp"
+
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content"
+    tools:context=".AllNoticeBoardActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="#000"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textSize="16sp"
+            android:text="Welcome to JIS College Of Engineering Admission"
+
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:text="Dept : "
+                android:textColor="#000"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CSE"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Please Fill Up The Form its Mandatory link provided below"
+            android:textColor="#000"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:text="Link :"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginStart="2dp"
+                android:textColor="#000"
+                android:text="https://fb.com/rajsingha"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
