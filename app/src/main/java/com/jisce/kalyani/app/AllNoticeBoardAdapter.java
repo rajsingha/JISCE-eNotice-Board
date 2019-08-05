@@ -46,6 +46,7 @@ public class AllNoticeBoardAdapter extends RecyclerView.Adapter<AllNoticeBoardAd
         holder.deptTxt.setText(notices.getDept());
         holder.detailsTxt.setText(notices.getDetails());
         holder.linkTxt.setText(notices.getLink());
+        holder.dateTxt.setText("Date : "+ notices.getDate());
         holder.linkTxt.setSelected(true);
         holder.linkTxt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +69,7 @@ public class AllNoticeBoardAdapter extends RecyclerView.Adapter<AllNoticeBoardAd
 
     class AllNoticeBoardViewHolder extends RecyclerView.ViewHolder{
 
-      TextView subjectTxt,deptTxt,detailsTxt,linkTxt;
+      TextView subjectTxt,deptTxt,detailsTxt,linkTxt,dateTxt;
       LinearLayout linearLayout;
       public AllNoticeBoardViewHolder( View itemView) {
           super(itemView);
@@ -77,6 +78,7 @@ public class AllNoticeBoardAdapter extends RecyclerView.Adapter<AllNoticeBoardAd
           deptTxt = itemView.findViewById(R.id.deptTextView);
           detailsTxt = itemView.findViewById(R.id.textTextView);
           linkTxt = itemView.findViewById(R.id.linkTxt);
+          dateTxt = itemView.findViewById(R.id.dateTextView);
           linearLayout = itemView.findViewById(R.id.linearLayout);
       }
   }

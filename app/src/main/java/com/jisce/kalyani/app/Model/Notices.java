@@ -1,17 +1,18 @@
 package com.jisce.kalyani.app.Model;
 
 public class Notices {
-    String Subject, Dept, Details, Link;
+    String Subject, Dept, Details, Link,Date;
 
     public Notices(){
 
     }
 
-    public Notices(String subject, String dept, String details, String link) {
+    public Notices(String subject, String dept, String details, String link,String date) {
         Subject = subject;
         Dept = dept;
         Details = details;
         Link = link;
+        Date = date;
     }
 
     public String getSubject() {
@@ -28,5 +29,8 @@ public class Notices {
 
     public String getLink() {
         return Link;
+    }
+    public String getDate(){
+        return Date;
     }
 }
