@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     app:cardElevation="8dp"
-
     android:layout_margin="8dp"
     android:layout_height="wrap_content"
-    tools:context=".AllNoticeBoardActivity">
+    tools:context=".AllNoticeBoardAdapter">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -20,7 +19,7 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:textSize="16sp"
             android:text="Welcome to JIS College Of Engineering Admission"
-
+            android:id="@+id/subjectTextView"
             android:layout_height="wrap_content" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,6 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CSE"
+                android:id="@+id/deptTextView"
                 android:textSize="16sp"
                 android:textColor="#000"/>
 
@@ -47,6 +47,7 @@
             android:layout_width="wrap_content"
             android:text="Please Fill Up The Form its Mandatory link provided below"
             android:textColor="#000"
+            android:id="@+id/textTextView"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="3dp"
             android:layout_height="wrap_content" />
@@ -67,6 +68,7 @@
                 android:textSize="16sp"
                 android:layout_marginStart="2dp"
                 android:textColor="#000"
+                android:id="@+id/linkTxt"
                 android:text="https://fb.com/rajsingha"
                 android:layout_height="wrap_content" />
 
