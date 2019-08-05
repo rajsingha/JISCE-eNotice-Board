@@ -3,10 +3,15 @@ package com.jisce.kalyani.app;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Notification;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jisce.kalyani.app.Model.Notices;
@@ -34,13 +39,25 @@ public class AllNoticeBoardAdapter extends RecyclerView.Adapter<AllNoticeBoardAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AllNoticeBoardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final AllNoticeBoardViewHolder holder, final int position) {
         Notices notices = noticesList.get(position);
 
         holder.subjectTxt.setText(notices.getSubject());
         holder.deptTxt.setText(notices.getDept());
         holder.detailsTxt.setText(notices.getDetails());
         holder.linkTxt.setText(notices.getLink());
+        holder.linkTxt.setSelected(true);
+        holder.linkTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = holder.linkTxt.getText().toString();
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                mContext.startActivity(i);
+
+            }
+        });
+
 
     }
 
@@ -52,6 +69,7 @@ public class AllNoticeBoardAdapter extends RecyclerView.Adapter<AllNoticeBoardAd
     class AllNoticeBoardViewHolder extends RecyclerView.ViewHolder{
 
       TextView subjectTxt,deptTxt,detailsTxt,linkTxt;
+      LinearLayout linearLayout;
       public AllNoticeBoardViewHolder( View itemView) {
           super(itemView);
 
@@ -59,6 +77,7 @@ public class AllNoticeBoardAdapter extends RecyclerView.Adapter<AllNoticeBoardAd
           deptTxt = itemView.findViewById(R.id.deptTextView);
           detailsTxt = itemView.findViewById(R.id.textTextView);
           linkTxt = itemView.findViewById(R.id.linkTxt);
+          linearLayout = itemView.findViewById(R.id.linearLayout);
       }
   }
 }

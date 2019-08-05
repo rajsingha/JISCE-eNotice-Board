@@ -8,8 +8,10 @@
     android:layout_height="wrap_content"
     tools:context=".AllNoticeBoardAdapter">
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:layout_margin="2dp"
         android:layout_height="match_parent">
         <TextView
             android:layout_width="wrap_content"
@@ -17,7 +19,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="3dp"
             android:marqueeRepeatLimit="marquee_forever"
-            android:textSize="16sp"
+            android:textSize="17sp"
             android:text="Welcome to JIS College Of Engineering Admission"
             android:id="@+id/subjectTextView"
             android:layout_height="wrap_content" />
@@ -66,10 +68,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:textSize="16sp"
+                android:singleLine="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:ellipsize="marquee"
                 android:layout_marginStart="2dp"
-                android:textColor="#000"
+                android:textColor="#0026FF"
                 android:id="@+id/linkTxt"
-                android:text="https://fb.com/rajsingha"
+                android:text="NA"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>

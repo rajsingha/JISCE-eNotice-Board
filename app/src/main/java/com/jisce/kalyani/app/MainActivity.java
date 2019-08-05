@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,15 +19,18 @@ import com.jisce.kalyani.app.Model.Notices;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
 
     RecyclerView recyclerView;
     AllNoticeBoardAdapter noticeBoardAdapter;
     List<Notices> noticesList;
+    SwipeRefreshLayout swipeRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        swipeRefreshLayout = findViewById(R.id.refreshRecycle);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -33,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
         noticesList = new ArrayList<>();
 
+        swipeRefreshLayout.setOnRefreshListener(this);
+
+        getData();
+
+
+    }
+    public void getData(){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Notices");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -43,11 +55,16 @@ public class MainActivity extends AppCompatActivity {
                         noticesList.add(not);
 
 
+                        swipeRefreshLayout.setRefreshing(false);
                     }
                     noticeBoardAdapter= new AllNoticeBoardAdapter(MainActivity.this,noticesList);
                     recyclerView.setAdapter(noticeBoardAdapter);
 
+
+
                 }
+
+
             }
 
             @Override
@@ -56,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onRefresh() {
+        noticesList.clear();
+        getData();
 
 
     }
