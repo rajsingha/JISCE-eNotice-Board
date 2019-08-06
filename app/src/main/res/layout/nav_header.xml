@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="176dp"
+    android:layout_height="200dp"
     android:background="@drawable/dimigo_gradient"
     android:gravity="bottom"
-    android:padding="12dp"
+    android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="80dp"
@@ -16,16 +16,16 @@
         android:layout_height="wrap_content"
         android:paddingTop="0dp"
         android:textColor="#FFFFFF"
-        android:padding="5dp"
+        android:padding="2dp"
         android:id="@+id/text_name"
-        android:textSize="19sp"
+        android:textSize="17sp"
         android:text="Welcome To JISCE"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="All the Notices Will Appear Here "
-        android:padding="8dp"
+        android:padding="2dp"
         android:textColor="#FFFFFF"
         android:id="@+id/text_email"
         android:paddingTop="2dp"
