@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     AllNoticeBoardAdapter noticeBoardAdapter;
     List<Notices> noticesList;
     SwipeRefreshLayout swipeRefreshLayout;
+    ProgressBar pBar;
 
     @Nullable
     @Override
@@ -42,6 +44,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         super.onViewCreated(view, savedInstanceState);
 
         swipeRefreshLayout = view.findViewById(R.id.refreshRecycle);
+        pBar = view.findViewById(R.id.loading_progress);
+        pBar.setVisibility(View.VISIBLE);
 
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -70,6 +74,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
 
                         swipeRefreshLayout.setRefreshing(false);
+                        pBar.setVisibility(View.GONE);
                     }
                     noticeBoardAdapter= new AllNoticeBoardAdapter(getContext(),noticesList);
                     recyclerView.setAdapter(noticeBoardAdapter);
