@@ -11,8 +11,10 @@ import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.URLUtil;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jisce.kalyani.app.Model.Notices;
 
@@ -52,9 +54,14 @@ public class AllNoticeBoardAdapter extends RecyclerView.Adapter<AllNoticeBoardAd
             @Override
             public void onClick(View view) {
                 String url = holder.linkTxt.getText().toString();
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                mContext.startActivity(i);
+                if (URLUtil.isValidUrl(url)){
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    mContext.startActivity(i);
+                }else {
+                    Toast.makeText(mContext,"This is not a valid Url",Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });

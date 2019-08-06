@@ -75,9 +75,10 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
                         swipeRefreshLayout.setRefreshing(false);
                         pBar.setVisibility(View.GONE);
+                        noticeBoardAdapter= new AllNoticeBoardAdapter(getContext(),noticesList);
+                        recyclerView.setAdapter(noticeBoardAdapter);
                     }
-                    noticeBoardAdapter= new AllNoticeBoardAdapter(getContext(),noticesList);
-                    recyclerView.setAdapter(noticeBoardAdapter);
+
 
 
 
