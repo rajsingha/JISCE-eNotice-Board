@@ -16,8 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:textColor="#000"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="3dp"
+           android:layout_margin="3dp"
             android:marqueeRepeatLimit="marquee_forever"
             android:textSize="17sp"
             android:text="Welcome to JIS College Of Engineering Admission"
@@ -26,8 +25,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="3dp"
+            android:layout_margin="3dp"
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
@@ -49,8 +47,7 @@
             android:text="Date :"
             android:id="@+id/dateTextView"
             android:textSize="16sp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="3dp"
+            android:layout_margin="3dp"
             android:textColor="#000"
             android:layout_height="wrap_content" />
 
@@ -59,14 +56,12 @@
             android:text="Please Fill Up The Form its Mandatory link provided below"
             android:textColor="#000"
             android:id="@+id/textTextView"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="3dp"
+            android:layout_margin="3dp"
             android:layout_height="wrap_content" />
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="3dp"
+            android:layout_margin="3dp"
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
