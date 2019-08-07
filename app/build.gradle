@@ -18,6 +18,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
 }
 
 dependencies {
@@ -37,6 +42,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0-alpha09'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
+    implementation('com.github.danysantiago:sendgrid-android:1') {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
 
 
 }

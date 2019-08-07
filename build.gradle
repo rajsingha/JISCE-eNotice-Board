@@ -20,6 +20,10 @@ allprojects {
         google()
         jcenter()
         maven { url "https://jitpack.io" }
+        maven {
+            url 'https://dl.bintray.com/adef145/maven/'
+        }
+        mavenCentral()
         
     }
 }

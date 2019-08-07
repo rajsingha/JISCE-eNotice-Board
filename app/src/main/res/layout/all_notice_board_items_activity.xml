@@ -14,11 +14,11 @@
         android:orientation="vertical"
         android:layout_margin="5dp"
         android:layout_height="match_parent">
-        <TextView
-            android:layout_width="wrap_content"
+
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:layout_width="match_parent"
             android:textColor="#000"
-           android:layout_margin="3dp"
-            android:marqueeRepeatLimit="marquee_forever"
+            android:layout_margin="3dp"
             android:textSize="17sp"
             android:text="Welcome to JIS College Of Engineering Admission"
             android:id="@+id/subjectTextView"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:text="Please Fill Up The Form its Mandatory link provided below"
             android:textColor="#000"
             android:id="@+id/textTextView"

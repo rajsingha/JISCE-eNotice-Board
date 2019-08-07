@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.borjabravo.readmoretextview.ReadMoreTextView;
 import com.jisce.kalyani.app.Model.Notices;
 
 import java.util.List;
@@ -76,8 +77,9 @@ public class AllNoticeBoardAdapter extends RecyclerView.Adapter<AllNoticeBoardAd
 
     class AllNoticeBoardViewHolder extends RecyclerView.ViewHolder{
 
-      TextView subjectTxt,deptTxt,detailsTxt,linkTxt,dateTxt;
+      TextView deptTxt,detailsTxt,linkTxt,dateTxt;
       LinearLayout linearLayout;
+      ReadMoreTextView subjectTxt;
       public AllNoticeBoardViewHolder( View itemView) {
           super(itemView);
 
