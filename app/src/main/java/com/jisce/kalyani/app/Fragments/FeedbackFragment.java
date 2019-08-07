@@ -88,7 +88,6 @@ public class FeedbackFragment extends Fragment {
         private String mFrom;
         private String mSubject;
         private String mText;
-        private DatabaseReference databaseReference;
         private ScrollView scrollView ;
 
 
